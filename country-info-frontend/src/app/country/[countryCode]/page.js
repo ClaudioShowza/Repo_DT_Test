@@ -12,13 +12,13 @@ export default function CountryInfo() {
   const { countryCode } = useParams();
   const [countryData, setCountryData] = useState(null);
   const [populationData, setPopulationData] = useState(null);
-  const [loading, setLoading] = useState(true); // Adicionar o estado de carregamento
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (countryCode) {
       const fetchCountryData = async () => {
         try {
-          // Usar a URL da API de informações do país a partir do .env
+          
           const apiUrl = `${process.env.NEXT_PUBLIC_API_COUNTRY_INFO_URL}/${countryCode}`;
           const response = await axios.get(apiUrl);
           setCountryData(response.data);
@@ -26,10 +26,10 @@ export default function CountryInfo() {
           const populationResponse = await axios.get(`${process.env.NEXT_PUBLIC_API_COUNTRY_INFO_URL}-data/${response.data.countryName}`);
           setPopulationData(populationResponse.data.populationHistory);
 
-          setLoading(false); // Definir o estado de carregamento como falso após os dados serem carregados
+          setLoading(false);
         } catch (error) {
           console.error('Error fetching country info or population data:', error);
-          setLoading(false); // Mesmo em caso de erro, parar o carregamento
+          setLoading(false); 
         }
       };
 
@@ -37,7 +37,7 @@ export default function CountryInfo() {
     }
   }, [countryCode]);
 
-  // Exibir o spinner enquanto os dados estão sendo carregados
+  
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">

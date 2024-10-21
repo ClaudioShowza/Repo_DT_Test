@@ -15,8 +15,6 @@ Table of Contents
 Installation
 Clone the repository:
 
-bash
-
 git clone https://github.com/ClaudioShowza/Repo_DT_Test.git
 cd Repo_DT_Test
 
@@ -24,19 +22,13 @@ Backend Setup
 
     Navigate to the backend directory:
 
-bash
-
 cd country-info-app
 
     Install backend dependencies:
 
-bash
-
 npm install
 
     Set up environment variables by creating a .env file in the root of country-info-app:
-
-mathematica
 
 PORT=3000
 COUNTRIES_API_URL=<Insert API URL for country data>
@@ -44,33 +36,23 @@ POPULATION_API_URL=<Insert API URL for population data>
 
     Run the backend server:
 
-bash
-
 npm start
 
 Frontend Setup
 
     Navigate to the frontend directory:
 
-bash
-
 cd country-info-frontend
 
     Install frontend dependencies:
-
-bash
 
 npm install
 
     Create a .env file in the country-info-frontend directory with the following content:
 
-bash
-
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
 
     Run the frontend application:
-
-bash
 
 npm run dev
 
